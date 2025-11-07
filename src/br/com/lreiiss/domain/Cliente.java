@@ -13,6 +13,8 @@ public class Cliente {
 
     public Cliente(String nome,String cpf, String tel, String end, String numero, String cidade, String estado) {
 
+        this.nome = nome;
+
         String cleanCpf = cpf.replaceAll("[^0-9]", "");
         this.cpf = Long.valueOf(cleanCpf);
         String cleanTel = tel.replaceAll("[^0-9]", "");
@@ -94,9 +96,11 @@ public class Cliente {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("br.com.lreiiss.domain.Cliente{");
-        sb.append("cpf=").append(cpf);
-        sb.append('}');
-        return sb.toString();
+            return "Nome: " + nome + "\n" +
+                    "CPF: " + cpf + "\n" +
+                    "Telefone: " + tel + "\n" +
+                    "Endereço: " + end + ", " + numero + "\n" +
+                    "Cidade: " + cidade + "\n" +
+                    "Estado: " + estado;
     }
 }
